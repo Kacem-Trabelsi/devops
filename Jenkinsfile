@@ -3,6 +3,7 @@ pipeline {
     
     tools {
         maven 'M2_HOME'
+        jdk 'JAVA_HOME'
     }
     
     environment {
@@ -25,10 +26,9 @@ pipeline {
                 git branch: 'main',
                     url: 'https://github.com/Kacem-Trabelsi/devops.git',
                     credentialsId: 'jenkins-github-credentials'
-             }
+            }
         }
         
-<<<<<<< HEAD
         stage('Build Maven - Nettoyage et Construction') {
             steps {
                 script {
@@ -49,7 +49,8 @@ pipeline {
                     junit 'target/surefire-reports/*.xml'
                 }
             }
-        }        
+        }
+        
         stage('Build Image Docker') {
             steps {
                 script {
@@ -83,9 +84,6 @@ pipeline {
         always {
             cleanWs()
         }
-=======
->>>>>>> 5ab6fa3978f4898049cf76546a4195ab97c12946
     }
 }
-
 
