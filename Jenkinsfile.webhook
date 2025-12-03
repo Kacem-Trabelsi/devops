@@ -13,7 +13,7 @@ pipeline {
     }
     
     triggers {
-        // Déclenchement automatique via Webhook GitHub (nécessite configuration NGROK + Webhook GitHub)
+        // Déclenchement automatique via Webhook GitHub
         githubPush()
     }
     
